@@ -72,7 +72,6 @@ $(window).on('load', function() {
     narrativeWidth = parseInt(getSetting('_narrativeWidth'));
     if (narrativeWidth > 0 && narrativeWidth < 100) {
       var mapWidth = 100 - narrativeWidth;
-
       $('#narration, #title').css('width', narrativeWidth + 'vw');
       $('#map').css('width', mapWidth + 'vw');
     } */
@@ -118,7 +117,7 @@ $(window).on('load', function() {
             icon: L.ExtraMarkers.icon({
               icon: 'fa-number',
               number: ++chapterCount,
-              markerColor: 'darkslateblue'
+              markerColor: '#40367c'
             })
           }
         ));
@@ -232,10 +231,10 @@ $(window).on('load', function() {
           currentlyInFocus = i;
 
           for (k = 0; k < pixelsAbove.length - 1; k++) {
-            changeMarkerColor(k, 'darkturquoise', 'darkslateblue');
+            changeMarkerColor(k, '#00ced1', '#40367c');
           }
 
-          changeMarkerColor(i, 'darkslateblue', 'darkturquoise');
+          changeMarkerColor(i, '#40367c', '#00ced1');
 
           // Remove overlay tile layer if needed
           if (map.hasLayer(overlay)) {
@@ -298,7 +297,7 @@ $(window).on('load', function() {
         color: " + trySetting('_narrativeText', 'black') + "; \
       }\
       a, a:visited, a:hover {\
-        color: " + trySetting('_narrativeLink', '#darkslateblue') + " \
+        color: " + trySetting('_narrativeLink', '#40367c') + " \
       }\
       .in-focus {\
         background-color: " + trySetting('_narrativeActive', '#f0f0f0') + " \
