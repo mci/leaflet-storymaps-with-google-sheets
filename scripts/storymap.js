@@ -2,7 +2,7 @@ $(window).on('load', function() {
   var documentSettings = {};
 
   // Some constants, such as default settings
-  const CHAPTER_ZOOM = 8;
+  const CHAPTER_ZOOM = 4;
 
   // This watches for the scrollable container
   var scrollPosition = 0;
@@ -117,7 +117,7 @@ $(window).on('load', function() {
             icon: L.ExtraMarkers.icon({
               icon: 'fa-number',
               number: ++chapterCount,
-              markerColor: 'darkslateblue'
+              markerColor: '#40367c'
             })
           }
         ));
@@ -231,10 +231,10 @@ $(window).on('load', function() {
           currentlyInFocus = i;
 
           for (k = 0; k < pixelsAbove.length - 1; k++) {
-            changeMarkerColor(k, 'darkturquoise', 'darkslateblue');
+            changeMarkerColor(k, '#00ced1', '#40367c');
           }
 
-          changeMarkerColor(i, 'darkslateblue', 'darkturquoise');
+          changeMarkerColor(i, '#40367c', '#00ced1');
 
           // Remove overlay tile layer if needed
           if (map.hasLayer(overlay)) {
