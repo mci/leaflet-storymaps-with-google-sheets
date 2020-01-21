@@ -2,7 +2,7 @@ $(window).on('load', function() {
   var documentSettings = {};
 
   // Some constants, such as default settings
-  const CHAPTER_ZOOM = 4;
+  const CHAPTER_ZOOM = 15;
 
   // This watches for the scrollable container
   var scrollPosition = 0;
@@ -58,8 +58,7 @@ $(window).on('load', function() {
   function addBaseMap() {
     var basemap = trySetting('_tileProvider', 'Stamen.TonerLite');
     L.tileLayer.provider(basemap, {
-      maxzoom: 8
-      scrollWheelZoom: true
+      maxZoom: 18
     }).addTo(map);
   }
 
@@ -72,6 +71,7 @@ $(window).on('load', function() {
     narrativeWidth = parseInt(getSetting('_narrativeWidth'));
     if (narrativeWidth > 0 && narrativeWidth < 100) {
       var mapWidth = 100 - narrativeWidth;
+
       $('#narration, #title').css('width', narrativeWidth + 'vw');
       $('#map').css('width', mapWidth + 'vw');
     } */
@@ -79,7 +79,7 @@ $(window).on('load', function() {
     var chapterContainerMargin = 70;
 
     document.title = getSetting('_mapTitle');
-    $('#title').append('<h2>' + getSetting('_mapTitle') + '</h2>');
+    $('#title').append('<h3>' + getSetting('_mapTitle') + '</h3>');
     $('#title').append('<small>' + getSetting('_mapSubtitle') + '</small>');
 
     // Load tiles
@@ -117,7 +117,7 @@ $(window).on('load', function() {
             icon: L.ExtraMarkers.icon({
               icon: 'fa-number',
               number: ++chapterCount,
-              markerColor: '#40367c'
+              markerColor: 'blue'
             })
           }
         ));
@@ -231,10 +231,10 @@ $(window).on('load', function() {
           currentlyInFocus = i;
 
           for (k = 0; k < pixelsAbove.length - 1; k++) {
-            changeMarkerColor(k, '#00ced1', '#40367c');
+            changeMarkerColor(k, 'orange', 'blue');
           }
 
-          changeMarkerColor(i, '#40367c', '#00ced1');
+          changeMarkerColor(i, 'blue', 'orange');
 
           // Remove overlay tile layer if needed
           if (map.hasLayer(overlay)) {
@@ -297,7 +297,7 @@ $(window).on('load', function() {
         color: " + trySetting('_narrativeText', 'black') + "; \
       }\
       a, a:visited, a:hover {\
-        color: " + trySetting('_narrativeLink', '#40367c') + " \
+        color: " + trySetting('_narrativeLink', 'blue') + " \
       }\
       .in-focus {\
         background-color: " + trySetting('_narrativeActive', '#f0f0f0') + " \
