@@ -18,9 +18,7 @@ $(window).on('load', function() {
    // Use Tabletop to fetch data from the Google sheet
    mapData = Tabletop.init({
      key: googleDocURL,
-     callback: function(data, mapData) { initMap(){
-       zoom: 1,
-       center" {lat: 33.050485, lng: -26.700577}; }
+     callback: function(data, mapData) { initMap(); }
    });
 
   /**
