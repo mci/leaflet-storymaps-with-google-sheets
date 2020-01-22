@@ -2,7 +2,7 @@ $(window).on('load', function() {
   var documentSettings = {};
 
   // Some constants, such as default settings
-  const CHAPTER_ZOOM = 5;
+  const CHAPTER_ZOOM = 2;
 
   // This watches for the scrollable container
   var scrollPosition = 0;
@@ -300,7 +300,7 @@ $(window).on('load', function() {
         color: " + trySetting('_narrativeLink', 'blue') + " \
       }\
       .in-focus {\
-        background-color: " + trySetting('_narrativeActive', '#F2F9FC') + " \
+        background-color: " + trySetting('_narrativeActive', '#FAF6DF') + " \
       }")
       .appendTo("head");
 
