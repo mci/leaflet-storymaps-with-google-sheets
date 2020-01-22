@@ -117,7 +117,7 @@ $(window).on('load', function() {
             icon: L.ExtraMarkers.icon({
               icon: 'fa-number',
               number: ++chapterCount,
-              markerColor: 'darkslateblue'
+              markerColor: 'blue'
             })
           }
         ));
@@ -231,10 +231,10 @@ $(window).on('load', function() {
           currentlyInFocus = i;
 
           for (k = 0; k < pixelsAbove.length - 1; k++) {
-            changeMarkerColor(k, 'darkturquoise', 'darkslateblue');
+            changeMarkerColor(k, 'green', 'blue');
           }
 
-          changeMarkerColor(i, 'darkslateblue', 'darkturquoise');
+          changeMarkerColor(i, 'blue', 'green');
 
           // Remove overlay tile layer if needed
           if (map.hasLayer(overlay)) {
@@ -293,14 +293,14 @@ $(window).on('load', function() {
       .prop("type", "text/css")
       .html("\
       #narration, #title {\
-        background-color: " + trySetting('_narrativeBackground', 'white') + "; \
+        background-color: " + trySetting('_narrativeBackground', '#006699') + "; \
         color: " + trySetting('_narrativeText', 'black') + "; \
       }\
       a, a:visited, a:hover {\
         color: " + trySetting('_narrativeLink', 'blue') + " \
       }\
       .in-focus {\
-        background-color: " + trySetting('_narrativeActive', '#6d91b3') + " \
+        background-color: " + trySetting('_narrativeActive', '#F2F9FC') + " \
       }")
       .appendTo("head");
 
