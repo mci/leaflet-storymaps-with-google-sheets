@@ -2,7 +2,7 @@ $(window).on('load', function() {
   var documentSettings = {};
 
   // Some constants, such as default settings
-  const CHAPTER_ZOOM = 15;
+  const CHAPTER_ZOOM = 5;
 
   // This watches for the scrollable container
   var scrollPosition = 0;
@@ -58,7 +58,7 @@ $(window).on('load', function() {
   function addBaseMap() {
     var basemap = trySetting('_tileProvider', 'Stamen.TonerLite');
     L.tileLayer.provider(basemap, {
-      maxZoom: 18
+      maxZoom: 8
     }).addTo(map);
   }
 
@@ -79,7 +79,7 @@ $(window).on('load', function() {
     var chapterContainerMargin = 70;
 
     document.title = getSetting('_mapTitle');
-    $('#title').append('<h3>' + getSetting('_mapTitle') + '</h3>');
+    $('#title').append('<h2>' + getSetting('_mapTitle') + '</h2>');
     $('#title').append('<small>' + getSetting('_mapSubtitle') + '</small>');
 
     // Load tiles
@@ -117,7 +117,7 @@ $(window).on('load', function() {
             icon: L.ExtraMarkers.icon({
               icon: 'fa-number',
               number: ++chapterCount,
-              markerColor: 'blue'
+              markerColor: 'darkslateblue'
             })
           }
         ));
@@ -231,10 +231,10 @@ $(window).on('load', function() {
           currentlyInFocus = i;
 
           for (k = 0; k < pixelsAbove.length - 1; k++) {
-            changeMarkerColor(k, 'orange', 'blue');
+            changeMarkerColor(k, 'darkturquoise', 'darkslateblue');
           }
 
-          changeMarkerColor(i, 'blue', 'orange');
+          changeMarkerColor(i, 'darkslateblue', 'darkturquoise');
 
           // Remove overlay tile layer if needed
           if (map.hasLayer(overlay)) {
@@ -300,7 +300,7 @@ $(window).on('load', function() {
         color: " + trySetting('_narrativeLink', 'blue') + " \
       }\
       .in-focus {\
-        background-color: " + trySetting('_narrativeActive', '#f0f0f0') + " \
+        background-color: " + trySetting('_narrativeActive', '#6d91b3') + " \
       }")
       .appendTo("head");
 
